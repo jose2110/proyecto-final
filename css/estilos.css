@@ -1,0 +1,160 @@
+.registro {
+    height: 650px;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+  
+  form {
+    background: white;
+    padding: 40px 0; }
+    form .grupo {
+      position: relative;
+      margin: 45px; }
+  
+  .form {
+    width: 100%;
+    margin: auto; }
+    .form h1 {
+      text-align: center;
+      font-weight: 700; }
+    .form input {
+      background: none;
+      font-size: 18px;
+      color: #c6c6c6;
+      padding: 10px 10px 10px 5px;
+      display: block;
+      width: 100%;
+      border: none;
+      border-bottom: 1px solid; }
+  
+  input:focus {
+    outline: none;
+    color: black; }
+  
+  label {
+    left: 5px;
+    top: 10px;
+    font-size: 16px;
+    bottom: 0;
+    transition: 0.5s ease-in-out all;
+    pointer-events: none;
+    color: #020024; }
+  
+  input:focus ~ label {
+    top: -14;
+    color: blue; }
+  
+  .barra {
+    position: relative;
+    display: block;
+    width: 100%; }
+  
+  .barra::before {
+    content: "";
+    height: 2px;
+    width: 0%;
+    bottom: 0;
+    position: absolute;
+    background: radial-gradient(circle, #020024 0%, rgba(58, 120, 124, 0.272146) 17%, #00ff3b 100%);
+    transition: 0.3s ease width;
+    left: 0; }
+  
+  input:focus ~ .barra::before {
+    width: 100%; }
+  
+  button {
+    background:brown;
+    border: none;
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+    height: 40px;
+    font-size: 16px;
+    cursor: pointer;
+    }
+
+  
+  .paginauno{
+      background-color: aqua;
+  }
+  
+.form .warnings{
+   width:200px;
+   margin: auto;
+   text-align: center; 
+   color: red; 
+  padding-top: 20px;}
+  .paginaregistro{
+    background-color:rosybrown
+  }
+header{
+  z-index: 100;
+}
+.description{
+  height:25px;
+  overflow: hidden;
+  transition:height .3s ease-in .3s
+}
+.description:hover{
+  height:80px;
+}
+.carrito{
+  min-height: 80vh;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+}
+.table__productos{
+  display: flex;
+} 
+.table__productos > img{
+  width: 9rem;
+  object-fit: contain;
+  border-radius: 6px;
+  margin-right: 20px;
+}
+.table__cantidad > input{
+  width: 40px;
+  
+  border:  none;
+  outline: 0;
+  font-size: 16px;
+  font-weight: 700;
+  margin-right: 30px;
+  margin-bottom: 20px;
+}
+.hide, .remove{
+  display: none;
+}
+ .nombre{
+  text-align: center;
+}
+.title{
+  text-align: center;
+}
+.pie {
+  width: 80%;
+  height: 200px; }
+  .pie .contacto {
+    float: left;
+    color: black; }
+
+.pie .redes {
+  float: right; }
+
+  @media screen and (max-width: 768px) {
+    .pie .contacto {
+      width: 100%;
+      float: left;
+      margin-bottom: 10px; } }
+  
+  @media screen and (max-width: 768px) {
+    .pie .redes {
+      float: left; } }
+  .nombre{
+    margin-bottom:40px;
+  }
+  .container-xl{
+    margin-bottom: 40px;
+  }
+ 
