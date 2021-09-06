@@ -1,11 +1,12 @@
 
-
-
-
 const Clickbutton = document.querySelectorAll('.button')
 const tbody = document.querySelector('.tbody')
+
+//BIEN esto me gusto
 let carrito = []
 
+
+//Esto Aca esta colgado!
 Clickbutton.forEach(btn => {
   btn.addEventListener('click', addToCarritoItem)
 })
@@ -40,6 +41,8 @@ function addItemCarrito(newItem){
 
   const InputElemnto = tbody.getElementsByClassName('input__elemento')
   for(let i =0; i < carrito.length ; i++){
+    //Esto es muy fragil, que pasa si tengo productos que se llaman igual??? 
+    //Simpre hay que tener un identificador unico para toda las entidades de nuestro programa.
     if(carrito[i].title.trim() === newItem.title.trim()){
       carrito[i].cantidad ++;
       const inputValue = InputElemnto[i]
@@ -82,6 +85,12 @@ function renderCarrito(){
   })
   CarritoTotal()
 }
+
+//Esta funcion no es pura, esta utilizando datos por fuera de su scope, es dificil de testear, tiene mas de una responsabilidad
+// una funcion / metodo solo tienen que tener una unica responsabilidad, hacer una sola cosa y hacerla bien
+// en este caso esta realizando la sumatoria, pero tambien esta renderizando y esta utilizando datos por fuera de su scope.
+//Deberia recibir el carrito como parametro, y retornar la suma, luego que otra funcion se encargue de renderiazar esos datos.
+//Esto aplica a todo, siempre una unica responsabilidad, y si depende de algo del mundo exterior, se toma por parametro
 
 function CarritoTotal(){
   let Total = 0;
@@ -130,6 +139,7 @@ function sumaCantidad(e){
   })
 }
 
+// El nombre de esta funcion no me gusta.... Los nombres de funciones o variables tienen que ser representativo a lo que hacen
 function addLocalStorage(){
   localStorage.setItem('carrito', JSON.stringify(carrito))
 }
@@ -144,7 +154,7 @@ window.onload = function(){
 
 
 
-
+//Esta constantes globales por lo que veo solo se usan en el evento de abajo, porque no es necesario que sean globales, deberian estar en el scope donde se van a utilizar
 const nombre = document.getElementById("name")
 const email  = document.getElementById("email")
 const pass = document.getElementById("password")
@@ -178,3 +188,16 @@ form.addEventListener("submit", e=> {
         parrafo.innerHTML = "enviado"
     }
   })
+
+
+//Propuesta de order del archivo
+
+// Asignacion de elementos HTML, botones, divs, selects... etc
+// Funciones
+// inicializacion de los eventos.
+//Mira este repo como ejemplo: https://github.com/fd1az/JS_101_SAB/tree/master/clase_10_TODOLIST
+
+
+//Tenes que arreglar varios estilos:
+// El boton de registro esta descentrado
+// El hover sobre los cards de productos solo deben aplicar a ese producto, no a toda a la fila.
