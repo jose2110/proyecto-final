@@ -178,3 +178,39 @@ form.addEventListener("submit", e=> {
         parrafo.innerHTML = "enviado"
     }
   })
+
+  $(".nombre").show(2000)
+  
+ 
+  
+
+  
+    
+  const elements = {
+    "items": [
+      {
+        "title": "",
+        "description": "Dummy description",
+        "picture_url": "http://www.myapp.com/myimage.jpg",
+        "category_id": "cat123",
+        "quantity": 1,
+        "currency_id": "ARS",
+        "unit_price": 10
+      }
+    ],
+  }
+
+const URL_API = 'https://api.mercadopago.com/checkout/preferences';
+  
+
+fetch(URL_API,{
+  method: 'POST',
+  headers: {
+    'Authorization': 'Bearer TEST-1320741243998699-092300-ad0dcf053c28355e987290623ae7ba25-377122424',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify(elements)
+}).then(response => {return response.json()})
+.then(data => {
+  console.log(data);
+})

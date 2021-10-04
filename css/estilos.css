@@ -128,9 +128,11 @@ header{
 }
  .nombre{
   text-align: center;
+  display:none;
 }
 .title{
   text-align: center;
+
 }
 .pie {
   width: 80%;
